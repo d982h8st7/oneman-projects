@@ -22,6 +22,9 @@ driver.find_element(By.XPATH,'//a[@id="writeArticleButton"]').click()
 title = driver.find_element(By.XPATH,'//input[@title=title]')
 content = driver.find_element(By.XPATH,'//textarea[@name=text]')
 
+
+
+
 # 본문 내용 추가
 time.sleep(5)
 additional_content = "crawling test with connecting everytime.kr with selenium.\n" \
