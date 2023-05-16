@@ -32,7 +32,6 @@ for i in range(1, 6):
 
     # 새 워크북 생성
     wb = Workbook()
-    ws = wb.active
 
     ws['A3'] = values1
     ws['B1'] = day  # 요일 값
