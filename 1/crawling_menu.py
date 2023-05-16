@@ -87,4 +87,3 @@ try:
 
     driver.find_element(By.XPATH,'//li[@class="submit"]').click()  # 실제 게시글 작성 버튼의 셀렉터로 변경해야 함
 except Exception as e:
-    print(str(e))
