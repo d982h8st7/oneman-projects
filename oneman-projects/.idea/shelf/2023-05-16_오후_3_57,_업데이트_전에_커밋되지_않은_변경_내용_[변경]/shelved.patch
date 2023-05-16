@@ -1,0 +1,290 @@
+Index: crawling_menu.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import datetime\r\nimport requests\r\nfrom urllib.parse import urljoin\r\nfrom bs4 import BeautifulSoup\r\nfrom selenium.webdriver.chrome.service import Service\r\nimport pandas as pd\r\nfrom selenium import webdriver\r\nfrom selenium.webdriver.common.by import By\r\nfrom selenium.webdriver.chrome.options import Options\r\nimport time\r\n\r\noptions = Options()\r\noptions.add_experimental_option('prefs', {\r\n    \"download.default_directory\": r'D:\\for_project_files',  # 경로 설정\r\n    \"download.prompt_for_download\": False,  # 파일 다운로드 시 확인창 띄우지 않기\r\n    })\r\noptions.add_experimental_option(\"debuggerAddress\", \"127.0.0.1:9222\")\r\n\r\ndriver = webdriver.Chrome(service=Service('D:\\\\task\\\\py\\\\1\\\\chromedriver.exe'), options=options)\r\n\r\n\r\n# # 가장 최신 게시글의 첨부파일 다운로드\r\nurl = 'https://www.ync.ac.kr/kor/CMS/Board/Board.do?mCode=MN217&mgr_seq=26&mode=list&mgr_seq=26'\r\nresponse = requests.get(url)\r\nsoup = BeautifulSoup(response.text, 'html.parser')\r\n#\r\n#\r\n# # 게시글 목록에서 가장 최신 게시글의 링크를 찾는 부분\r\nbase_url = 'https://www.ync.ac.kr/kor/CMS/Board/Board.do'\r\nlatest_post_path = soup.find('p', {'class': 'stitle'}).find('a').get('href')\r\nlatest_post_link = urljoin(base_url, latest_post_path)\r\n\r\ndriver.get(latest_post_link)\r\ntime.sleep(2)\r\nitem = driver.find_element(By.XPATH,'//*[@id=\"board-wrap\"]/div[1]/div[2]/div/ul/li[1]/a')\r\nlink = item.get_attribute('href')\r\ntemp = requests.get(link)\r\n\r\nfile = open(\"D:\\\\for_project_files\\\\yami.xlsx\",'wb')\r\nfile.write(temp.content)\r\nfile.close()\r\n\r\ndata = pd.read_excel('yami.xlsx')  # 엑셀파일 저장\r\n# 조식, 중식, 석식 구분값 추출\r\nvalues1 = data.iloc[1, 0]  # 첫 번째 열('A'열)의 3행부터 7행까지 값\r\nvalues2 = data.iloc[14, 0]  # 첫 번째 열('A'열)의 18행부터 20행까지 값\r\nvalues3 = data.iloc[18, 0]  # 첫 번째 열('A'열)의 22행부터 26행까지 값\r\n# values를 문자열로 변환하고, 각 값 사이에 줄 바꿈을 추가합니다.\r\nvalues_str = values1\r\nvalues_str1 = values2\r\nvalues_str2 = values3\r\n\r\n# 메모장에 저장합니다.\r\noutput_file_path = r'D:\\for_project_files\\output.txt'\r\nwith open(output_file_path, 'w') as f:\r\n    f.write(values_str + '\\n\\n\\n\\n' + '\\n\\n\\n\\n' + values_str1 + '\\n\\n\\n' + '\\n\\n\\n' + values_str2)\r\n\r\nmenu_sec1 = data.iloc[1:7, 2].astype(str)  # 첫 번째 열('A'열)의 3행부터 7행까지 값\r\nmenu_sec2 = data.iloc[14:18, 2].astype(str)  # 첫 번째 열('A'열)의 18행부터 20행까지 값\r\nmenu_sec3 = data.iloc[18:24, 2].astype(str)  # 첫 번째 열('A'열)의 22행부터 26행까지 값\r\n# values를 문자열로 변환하고, 각 값 사이에 줄 바꿈을 추가합니다.\r\nmenu_val1 = ' \\n'.join(menu_sec1.values)+'ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ'\r\nmenu_val2 = \" \\n\".join(menu_sec2.values)+'ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ'\r\nmenu_val3 = \" \\n\".join(menu_sec3.values)+'ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ'\r\n\r\n\r\n# # 메모장에 저장합니다.\r\noutput_file_path = r'D:\\for_project_files\\output2.txt'\r\nwith open(output_file_path, 'w') as f:\r\n    f.write(menu_val1 + '\\n\\n' + menu_val2 + '\\n\\n' + menu_val3)\r\n\r\na = datetime.datetime.now()\r\n\r\ntry:\r\n    driver.get('https://everytime.kr/393849/')\r\n    # time.sleep(40)\r\n    driver.find_element(By.XPATH,'//a[@id=\"writeArticleButton\"]').click()\r\n    title = driver.find_element(By.CSS_SELECTOR, 'input.title')\r\n    content = driver.find_element(By.XPATH,'//textarea[@class=\"smallplaceholder\"]')\r\n\r\n    main_contents = values_str + menu_val1 + '\\n' + values_str1 + menu_val2 + '\\n' + values_str2 + menu_val3 + '\\n\\n\\n\\n'\r\n    additional_content = \"crawling project with connecting everytime.kr with selenium.\\n\" \\\r\n                         \"You can see the code source in https://github.com/d982h8st7/oneman-projects/tree/main/1\\n\"+a\r\n    # 두 문자열을 결합\r\n    title.send_keys('2023년 5월 16일 학식 메뉴')  # 실제 제목으로 변경해야 함\r\n    content.send_keys(main_contents + additional_content)\r\n\r\n    driver.find_element(By.XPATH,'//li[@class=\"submit\"]').click()  # 실제 게시글 작성 버튼의 셀렉터로 변경해야 함\r\nexcept Exception as e:\r\n    print(str(e))
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/crawling_menu.py b/crawling_menu.py
+--- a/crawling_menu.py	
++++ b/crawling_menu.py	
+@@ -45,29 +45,18 @@
+ values1 = data.iloc[1, 0]  # 첫 번째 열('A'열)의 3행부터 7행까지 값
+ values2 = data.iloc[14, 0]  # 첫 번째 열('A'열)의 18행부터 20행까지 값
+ values3 = data.iloc[18, 0]  # 첫 번째 열('A'열)의 22행부터 26행까지 값
+-# values를 문자열로 변환하고, 각 값 사이에 줄 바꿈을 추가합니다.
++
+ values_str = values1
+ values_str1 = values2
+ values_str2 = values3
+ 
+-# 메모장에 저장합니다.
+-output_file_path = r'D:\for_project_files\output.txt'
+-with open(output_file_path, 'w') as f:
+-    f.write(values_str + '\n\n\n\n' + '\n\n\n\n' + values_str1 + '\n\n\n' + '\n\n\n' + values_str2)
+-
+ menu_sec1 = data.iloc[1:7, 2].astype(str)  # 첫 번째 열('A'열)의 3행부터 7행까지 값
+ menu_sec2 = data.iloc[14:18, 2].astype(str)  # 첫 번째 열('A'열)의 18행부터 20행까지 값
+ menu_sec3 = data.iloc[18:24, 2].astype(str)  # 첫 번째 열('A'열)의 22행부터 26행까지 값
+ # values를 문자열로 변환하고, 각 값 사이에 줄 바꿈을 추가합니다.
+-menu_val1 = ' \n'.join(menu_sec1.values)+'ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ'
+-menu_val2 = " \n".join(menu_sec2.values)+'ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ'
+-menu_val3 = " \n".join(menu_sec3.values)+'ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ'
+-
+-
+-# # 메모장에 저장합니다.
+-output_file_path = r'D:\for_project_files\output2.txt'
+-with open(output_file_path, 'w') as f:
+-    f.write(menu_val1 + '\n\n' + menu_val2 + '\n\n' + menu_val3)
++menu_val1 = ' \n'.join(menu_sec1.values)
++menu_val2 = " \n".join(menu_sec2.values)
++menu_val3 = " \n".join(menu_sec3.values)
+ 
+ a = datetime.datetime.now()
+ 
+@@ -87,4 +76,5 @@
+ 
+     driver.find_element(By.XPATH,'//li[@class="submit"]').click()  # 실제 게시글 작성 버튼의 셀렉터로 변경해야 함
+ except Exception as e:
+-    print(str(e))
+\ No newline at end of file
++    print(str(e))
++    #C:\Program Files\Google\Chrome\Application>chrome.exe --remote-debugging-port=9222 --user-data-dir="C:\selenum\AutomationProfile"
+\ No newline at end of file
+Index: ../README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../README.md b/../README.md
+deleted file mode 100644
+--- a/../README.md	
++++ /dev/null	
+@@ -1,2 +0,0 @@
+-# oneman-projects
+-학식 크롤링 데이터 추출 자동 게시
+Index: ../project_ver1.0.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../project_ver1.0.py b/../project_ver1.0.py
+deleted file mode 100644
+--- a/../project_ver1.0.py	
++++ /dev/null	
+@@ -1,57 +0,0 @@
+-import requests
+-from bs4 import BeautifulSoup
+-import pandas as pd
+-from selenium import webdriver
+-
+-# 가장 최신 게시글의 첨부파일 다운로드
+-url = 'https://www.ync.ac.kr/kor/CMS/Board/Board.do?mCode=MN217&mgr_seq=26&mode=list&mgr_seq=26'
+-response = requests.get(url)
+-soup = BeautifulSoup(response.text, 'html.parser')
+-
+-# 게시글 목록에서 가장 최신 게시글의 링크를 찾는 부분
+-latest_post_link = soup.find('div', {'class': 'post_list'}).find('a').get('href')
+-
+-# 가장 최신 게시글 페이지로 이동
+-response = requests.get(latest_post_link)
+-soup = BeautifulSoup(response.text, 'html.parser')
+-
+-# 첨부파일 URL을 찾는 부분
+-file_url = soup.find('a', {'class': 'attached'}).get('href')
+-
+-# 첨부파일을 다운로드하는 부분
+-response = requests.get(file_url)
+-with open('file.xlsx', 'wb') as f:
+-    f.write(response.content)
+-
+-# 다운로드 받은 파일 읽기
+-data = pd.read_excel('file.xlsx')
+-data_to_post = data[['B', 'C', 'D', 'E', 'F']]  # 실제 엑셀 파일의 열 이름에 따라 수정해야 함
+-
+-# Everytime에 로그인하고 게시글 작성
+-driver = webdriver.Chrome('/path/to/chromedriver')  # 실제 드라이버 파일의 경로로 변경해야 함
+-driver.get('https://everytime.kr/login')
+-username = driver.find_element_by_name('userid')
+-password = driver.find_element_by_name('password')
+-
+-username.send_keys('your_username')  # 실제 아이디로 변경해야 함
+-password.send_keys('your_password')  # 실제 비밀번호로 변경해야 함
+-
+-driver.find_element_by_xpath('//input[@type="submit"]').click()  # 실제 로그인 버튼의 셀렉터로 변경해야 함
+-driver.get('https://everytime.kr/393849/write')
+-
+-title = driver.find_element_by_name('title')
+-content = driver.find_element_by_name('content')
+-
+-# 본문 내용 추가
+-
+-additional_content = "추가적으로 넣을 본문 내용입니다."
+-# 두 문자열을 결합
+-
+-final_content = data_to_post.to_string() + "\n" + additional_content
+-
+-title.send_keys('your_title')  # 실제 제목으로 변경해야 함
+-
+-content.send_keys(final_content)
+-
+-driver.find_element_by_xpath('//input[@type="submit"]').click()  # 실제 게시글 작성 버튼의 셀렉터로 변경해야 함
+-
+Index: .idea/1.iml
+===================================================================
+diff --git a/.idea/1.iml b/.idea/1.iml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/1.iml	
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="PYTHON_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$" />
++    <orderEntry type="jdk" jdkName="Python 3.11" jdkType="Python SDK" />
++    <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="module" module-name="Solving-Algorithm" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/modules.xml
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/modules.xml	
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/1.iml" filepath="$PROJECT_DIR$/.idea/1.iml" />
++      <module fileurl="file://$PROJECT_DIR$/../Solving-Algorithm/.idea/Solving-Algorithm.iml" filepath="$PROJECT_DIR$/../Solving-Algorithm/.idea/Solving-Algorithm.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/inspectionProfiles/profiles_settings.xml
+===================================================================
+diff --git a/.idea/inspectionProfiles/profiles_settings.xml b/.idea/inspectionProfiles/profiles_settings.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/inspectionProfiles/profiles_settings.xml	
+@@ -0,0 +1,6 @@
++<component name="InspectionProjectProfileManager">
++  <settings>
++    <option name="USE_PROJECT_PROFILE" value="false" />
++    <version value="1.0" />
++  </settings>
++</component>
+\ No newline at end of file
+Index: .idea/sonarlint/issuestore/index.pb
+===================================================================
+diff --git a/.idea/sonarlint/issuestore/index.pb b/.idea/sonarlint/issuestore/index.pb
+new file mode 100644
+--- /dev/null	
++++ b/.idea/sonarlint/issuestore/index.pb	
+@@ -0,0 +1,11 @@
++
++9
++	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
++A
++project_ver1.0.py,9\d\9d61e5c98e1e839c800ae3d96bae55e3f43a5abe
++B
++login_everytime.py,4\d\4d66d494024a785d3d60070339be67cb69da6d38
++O
++testing_with_debugged_chrome.py,a\9\a97862aef7e9bebdb3f0ff575df306dbd626be2c
++B
++test_web_driver.py,9\e\9e1c19bd1b87ad84b70a7c1f0967f82fe4ca633d
+\ No newline at end of file
+Index: .idea/vcs.xml
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/vcs.xml	
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
++    <mapping directory="$PROJECT_DIR$/../Solving-Algorithm" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/sonarlint/securityhotspotstore/index.pb
+===================================================================
+diff --git a/.idea/sonarlint/securityhotspotstore/index.pb b/.idea/sonarlint/securityhotspotstore/index.pb
+new file mode 100644
+--- /dev/null	
++++ b/.idea/sonarlint/securityhotspotstore/index.pb	
+@@ -0,0 +1,11 @@
++
++9
++	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
++A
++project_ver1.0.py,9\d\9d61e5c98e1e839c800ae3d96bae55e3f43a5abe
++B
++test_web_driver.py,9\e\9e1c19bd1b87ad84b70a7c1f0967f82fe4ca633d
++B
++login_everytime.py,4\d\4d66d494024a785d3d60070339be67cb69da6d38
++O
++testing_with_debugged_chrome.py,a\9\a97862aef7e9bebdb3f0ff575df306dbd626be2c
+\ No newline at end of file
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	
++++ b/.idea/.gitignore	
+@@ -0,0 +1,8 @@
++# 디폴트 무시된 파일
++/shelf/
++/workspace.xml
++# 에디터 기반 HTTP 클라이언트 요청
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
+Index: .idea/discord.xml
+===================================================================
+diff --git a/.idea/discord.xml b/.idea/discord.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/discord.xml	
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="DiscordProjectSettings">
++    <option name="show" value="PROJECT_FILES" />
++    <option name="description" value="" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/inspectionProfiles/Project_Default.xml
+===================================================================
+diff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/inspectionProfiles/Project_Default.xml	
+@@ -0,0 +1,19 @@
++<component name="InspectionProjectProfileManager">
++  <profile version="1.0">
++    <option name="myName" value="Project Default" />
++    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
++      <option name="ignoredErrors">
++        <list>
++          <option value="W292" />
++        </list>
++      </option>
++    </inspection_tool>
++    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
++      <option name="ignoredErrors">
++        <list>
++          <option value="N806" />
++        </list>
++      </option>
++    </inspection_tool>
++  </profile>
++</component>
+\ No newline at end of file
