@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f773167f-f220-4045-b8ac-5753ed296f5f" name="변경" comment="5/16&#10;원본 엑셀파일에서 식사구분값, 각 요일마다 추출한 메뉴를 결합하여 각요일마다의 새로운 엑셀파일을 생성함">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f773167f-f220-4045-b8ac-5753ed296f5f" name="변경" comment="5/16&#10;원본 엑셀파일에서 식사구분값, 각 요일마다 추출한 메뉴를 결합하여 각요일마다의 새로운 엑셀파일을 생성함" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,7 +98,7 @@
       <workItem from="1684179110406" duration="110000" />
       <workItem from="1684215074118" duration="6188000" />
       <workItem from="1684221350072" duration="21000" />
-      <workItem from="1684425773795" duration="2015000" />
+      <workItem from="1684425773795" duration="2380000" />
     </task>
     <task id="LOCAL-00001" summary="1.0">
       <created>1684163474489</created>
