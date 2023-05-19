@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f773167f-f220-4045-b8ac-5753ed296f5f" name="변경" comment="5/16&#10;원본 엑셀파일에서 식사구분값, 각 요일마다 추출한 메뉴를 결합하여 각요일마다의 새로운 엑셀파일을 생성함">
-      <change beforePath="$PROJECT_DIR$/test_menu_for_pic.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_menu_for_pic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project_ver1.0.py" beforeDir="false" />
-    </list>
+    <list default="true" id="f773167f-f220-4045-b8ac-5753ed296f5f" name="변경" comment="5/16&#10;원본 엑셀파일에서 식사구분값, 각 요일마다 추출한 메뉴를 결합하여 각요일마다의 새로운 엑셀파일을 생성함" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +32,9 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_COMMON_BRANCH" value="main" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -51,10 +49,11 @@
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/task/py",
+    "last_opened_file_path": "D:/task/py/Solving-Algorithm",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -99,6 +98,7 @@
       <workItem from="1684179110406" duration="110000" />
       <workItem from="1684215074118" duration="6188000" />
       <workItem from="1684221350072" duration="21000" />
+      <workItem from="1684425773795" duration="2380000" />
     </task>
     <task id="LOCAL-00001" summary="1.0">
       <created>1684163474489</created>
@@ -149,7 +149,42 @@
       <option name="project" value="LOCAL" />
       <updated>1684220245522</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="5/16&#10;원본 엑셀파일에서 식사구분값, 각 요일마다 추출한 메뉴를 결합하여 각요일마다의 새로운 엑셀파일을 생성함">
+      <created>1684425835609</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684425835609</updated>
+    </task>
+    <task id="LOCAL-00009" summary="5/16&#10;원본 엑셀파일에서 식사구분값, 각 요일마다 추출한 메뉴를 결합하여 각요일마다의 새로운 엑셀파일을 생성함">
+      <created>1684425847007</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684425847007</updated>
+    </task>
+    <task id="LOCAL-00010" summary="5/16&#10;원본 엑셀파일에서 식사구분값, 각 요일마다 추출한 메뉴를 결합하여 각요일마다의 새로운 엑셀파일을 생성함">
+      <created>1684425854630</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684425854630</updated>
+    </task>
+    <task id="LOCAL-00011" summary="5/16&#10;원본 엑셀파일에서 식사구분값, 각 요일마다 추출한 메뉴를 결합하여 각요일마다의 새로운 엑셀파일을 생성함">
+      <created>1684425857758</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684425857758</updated>
+    </task>
+    <task id="LOCAL-00012" summary="5/16&#10;원본 엑셀파일에서 식사구분값, 각 요일마다 추출한 메뉴를 결합하여 각요일마다의 새로운 엑셀파일을 생성함">
+      <created>1684425869031</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684425869031</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,7 +195,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

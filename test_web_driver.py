@@ -9,7 +9,7 @@ options = Options()
 options.add_experimental_option('debuggerAddress', '127.0.0.1:9222')
 
 try:
-    driver = webdriver.Chrome(service=Service('./chromedriver.exe'), options=options)
+    driver = webdriver.Chrome(service=Service('D:\\task\\py\\1\\chromedriver.exe'), options=options)
     wait = WebDriverWait(driver, 10)
 
     driver.get('https://everytime.kr/393849/')
