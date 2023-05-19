@@ -19,10 +19,10 @@ driver = webdriver.Chrome(service=Service('./chromedriver.exe'), options=options
 
 
 try:
-    # driver.get('https://everytime.kr/393849/')
-    # time.sleep(40)
-    # driver.find_element(By.XPATH,'//a[@id="writeArticleButton"]').click()
-    #upload_button = driver.find_element(By.CLASS_NAME, 'attach')
+    driver.get('https://everytime.kr/393849/')
+    time.sleep(40)
+    driver.find_element(By.XPATH,'//a[@id="writeArticleButton"]').click()
+    upload_button = driver.find_element(By.CLASS_NAME, 'attach')
     title = driver.find_element(By.CSS_SELECTOR, 'input.title')
     content = driver.find_element(By.XPATH,'//textarea[@class="smallplaceholder"]')
 
