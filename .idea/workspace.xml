@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f773167f-f220-4045-b8ac-5753ed296f5f" name="변경" comment="5/16&#10;원본 엑셀파일에서 식사구분값, 각 요일마다 추출한 메뉴를 결합하여 각요일마다의 새로운 엑셀파일을 생성함" />
+    <list default="true" id="f773167f-f220-4045-b8ac-5753ed296f5f" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/../Solving-Algorithm/temp1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/0/70a3de9884ea4eee9f93bea7de3353b6df30a863" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/e/9e1c19bd1b87ad84b70a7c1f0967f82fe4ca633d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/0/70a3de9884ea4eee9f93bea7de3353b6df30a863" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/e/9e1c19bd1b87ad84b70a7c1f0967f82fe4ca633d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Solving-Algorithm" beforeDir="false" afterPath="$PROJECT_DIR$/../Solving-Algorithm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Solving-Algorithm/Lecture.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Solving-Algorithm/Lecture.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$" beforeDir="false" afterPath="$PROJECT_DIR$" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/oneman-projects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/oneman-projects.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/5/25b68f3573df59fd326c5977ee70dc5fac64b327" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/2/b2d3f2b647b714ee04565236fba605d103c3faa9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/c/fc0aa13f15aea6e6518c04d8daef2eb057ac8beb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/5/25b68f3573df59fd326c5977ee70dc5fac64b327" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/2/b2d3f2b647b714ee04565236fba605d103c3faa9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/c/fc0aa13f15aea6e6518c04d8daef2eb057ac8beb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +53,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_COMMON_BRANCH" value="main" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../Solving-Algorithm" />
     <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -51,17 +71,36 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "ToolWindowPython 콘솔.ShowToolbar": "false",
     "WebServerToolWindowFactoryState": "false",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "main2",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/task/py/Solving-Algorithm",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "settings.editor.selected.configurable": "pyconsole",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="oneman-projects" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="oneman-projects" />
+        <option name="myAddContentRoots" value="false" />
+        <option name="myAddSourceRoots" value="false" />
+      </console-settings>
+    </option>
+    <option name="myShowDebugConsoleByDefault" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\task\py\oneman-projects" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="1" />
@@ -85,6 +124,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="tq" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\python\venv\Scripts\python.exe" />
+      <option name="SDK_NAME" value="Python 3.9 (python)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Solving-Algorithm" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Solving-Algorithm" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -98,7 +160,12 @@
       <workItem from="1684179110406" duration="110000" />
       <workItem from="1684215074118" duration="6188000" />
       <workItem from="1684221350072" duration="21000" />
-      <workItem from="1684425773795" duration="2380000" />
+      <workItem from="1684425773795" duration="2652000" />
+      <workItem from="1684569770423" duration="5036000" />
+      <workItem from="1684577509112" duration="1178000" />
+      <workItem from="1684578700102" duration="263000" />
+      <workItem from="1684578971035" duration="425000" />
+      <workItem from="1684579405786" duration="1420000" />
     </task>
     <task id="LOCAL-00001" summary="1.0">
       <created>1684163474489</created>
@@ -184,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684425869031</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="5/16&#10;원본 엑셀파일에서 식사구분값, 각 요일마다 추출한 메뉴를 결합하여 각요일마다의 새로운 엑셀파일을 생성함">
+      <created>1684428417016</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684428417016</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +288,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <MESSAGE value="1.0" />
     <MESSAGE value="Due to static problem, change to selenium from beautifulsoup." />
     <MESSAGE value="3:35 AM&#10;Only for log in and write article in site." />
@@ -229,7 +304,11 @@
     <SUITE FILE_PATH="coverage/1$test_web_driver.coverage" NAME="test_web_driver 커버리지 결과" MODIFIED="1684175194161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/1$login_everytime.coverage" NAME="login_everytime 커버리지 결과" MODIFIED="1684175219911" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/1$Lecture.coverage" NAME="Lecture 커버리지 결과" MODIFIED="1684178364771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Solving-Algorithm" />
+    <SUITE FILE_PATH="coverage/oneman_projects$Lecture.coverage" NAME="Lecture 커버리지 결과" MODIFIED="1684580553823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Solving-Algorithm" />
     <SUITE FILE_PATH="coverage/1$crawling_menu.coverage" NAME="crawling_menu 커버리지 결과" MODIFIED="1684177436382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/oneman_projects$__.coverage" NAME="Solving-Algorithm 커버리지 결과" MODIFIED="1684575522425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
+    <SUITE FILE_PATH="coverage/oneman_projects$temp1.coverage" NAME="temp1 커버리지 결과" MODIFIED="1684580567078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Solving-Algorithm" />
     <SUITE FILE_PATH="coverage/1$project_ver1_0.coverage" NAME="project_ver1.0 커버리지 결과" MODIFIED="1684161873498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/oneman_projects$py.coverage" NAME="py 커버리지 결과" MODIFIED="1684574559396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../.." />
   </component>
 </project>
